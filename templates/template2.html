@@ -20,5 +20,14 @@
       {% block content %}
       {% endblock %}
     </div>
+    <div>
+      {% for item in dict %}
+
+        {{item['product_name']}}<br>
+        {{item['price']}}<br>
+        {{item['buy_now']}}
+
+      {% endfor %}
+    </div>
   </body>
 </html>

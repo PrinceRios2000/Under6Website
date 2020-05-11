@@ -7,7 +7,8 @@ products = [
 	{
 		'id': 't-shirt.jpg',
 		'product_name': 'Under6 T-Shirt',
-		'price': '50.00 USD'
+		'price': '50.00 USD',
+		'buy_now': 'Add to cart'
 	}
 ]
 
@@ -19,9 +20,7 @@ def home():
 
 @app.route('/shop')
 def shop():
-	for i in range(len(products)):
-		lst.append(products[i])
-	return render_template('template2.html', image = lst, dict = products)
+	return render_template('template2.html', dict = products)
 
 @app.route('/cart')
 def cart():
