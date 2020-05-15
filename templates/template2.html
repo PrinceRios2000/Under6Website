@@ -20,14 +20,19 @@
       {% block content %}
       {% endblock %}
     </div>
-    <div>
+    <div class ="col-md-6">
       <br><br><br><br>
+      <form action="{{url_for('addCart')}}" method="post">
       {% for item in dict %}
 
        <img src="static/{{item['id']}}" alt="Under6"><br>
-        {{item['product_name']}}<br>
-        {{item['price']}}<br>
-        {{item['buy_now']}}
+        <h4>{{item['product_name']}}</h4>
+        {{item['price']}}
+        <p>
+        <input type="hidden" name="product_id" value="{{item['id']}}">
+        <a href="" class="btn btn-warning"> Add to Cart</a>
+        <p>
+        
 
       {% endfor %}
     </div>
